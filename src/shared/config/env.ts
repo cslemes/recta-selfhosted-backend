@@ -28,7 +28,7 @@ const envSchema = z.object({
 
   // First run - run migrations automatically on startup (optional)
   FIRST_RUN: z.coerce.boolean().optional(),
-  
+
   // CORS - Allowed origins (comma-separated list)
   // In production, specify allowed frontend URLs
   // Example: "https://recta.app,https://www.recta.app,http://localhost:5173"
@@ -54,7 +54,7 @@ function validateEnv() {
   // NOTE: This validation is deferred - we don't fail startup if Firebase is missing
   // The health check should work even without Firebase
   const env = parsed.data;
-  
+
   // Only validate Firebase in production or if explicitly required
   // In Railway, we want the server to start even if Firebase config is missing initially
   if (env.NODE_ENV === 'production') {

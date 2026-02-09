@@ -1,0 +1,34 @@
+# Dependencies & build output
+node_modules
+dist
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*firebase*.json
+
+# Version control
+.git
+.gitignore
+
+# IDE / editor
+.vscode
+.idea
+*.swp
+*.swo
+
+# Documentation
+README.md
+LICENSE
+CODE_OF_CONDUCT.md
+SECURITY.md
+
+# Dev / test tooling
+.dockerignore
+Dockerfile
+insomnia-collection.*
+convert-to-insomnia-yaml.js
+test-*.sh
+*.log

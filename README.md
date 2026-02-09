@@ -31,6 +31,24 @@ You can run this backend on any Node.js host. Some options:
 
 Set `DATABASE_URL`, Firebase credentials, and (in production) `ALLOWED_ORIGINS` and optionally `SWAGGER_USERNAME`/`SWAGGER_PASSWORD`. For recurring transactions, schedule `npm run cron:process-recurrences` once per day (cron job or Railway cron).
 
+## Running with Docker
+
+This project includes a `docker-compose.yml` file for a production-like environment. It sets up the backend application, a PostgreSQL database, and a Redis instance.
+
+To run the application with Docker, use the following command:
+
+```bash
+docker-compose up -d --build
+```
+
+The backend will be available at `http://localhost:3000`.
+
+**Notes:**
+
+*   Environment variables are defined in the `docker-compose.yml` file. The `.env` file is not used by this setup.
+*   The PostgreSQL data is persisted in a Docker volume named `postgres_data`.
+*   The application is set to run migrations on startup (`FIRST_RUN=true`).
+
 ## How to run
 
 ### Prerequisites
